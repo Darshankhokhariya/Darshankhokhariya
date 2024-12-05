@@ -74,7 +74,7 @@ const Portfolio = () => {
                                         <span className="relative z-10 bg-gray-950 rounded-xl">
                                             <span className="flex items-center space-x-2">
                                                 <span className="transition-transform duration-500 group-hover:translate-x-1">
-                                                    Let's get started
+                                                    Let&apos;s get started
                                                 </span>
                                                 <FaChevronRight className="w-6 h-6 transition-transform duration-500 group-hover:translate-x-1" />
                                             </span>

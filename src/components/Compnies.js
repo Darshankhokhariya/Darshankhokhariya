@@ -25,7 +25,7 @@ const Companies = () => {
                     className="text-4xl md:text-5xl font-bold text-start text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-400"
                     data-aos="fade-down"
                 >
-                    Companies I've Worked With
+                    Companies I&apos;ve Worked With
                 </h2>
                 <p
                     className="mt-4 text-lg text-start md:text-xl text-gray-300"
