@@ -1,7 +1,7 @@
 const Hero = () => {
     return (
         <section
-            className="relative md:h-[100svh] flex items-center justify-center text-white"
+            className="relative h-[100svh] flex items-center justify-center text-white"
             data-aos="fade-up"
             data-aos-duration="1000"
         >
