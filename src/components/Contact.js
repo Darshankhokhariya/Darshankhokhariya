@@ -47,10 +47,10 @@ const Contact = () => {
                             <h4 className="text-lg font-semibold text-primary">Follow Me:</h4>
                             <div className="mt-4 flex space-x-4">
                                 <a href="https://www.instagram.com/darshank_dev/" target='_blank' className="hover:text-primary">
-                                    <FaInstagram />
+                                    <FaInstagram className='text-xl' />
                                 </a>
                                 <a href="http://www.linkedin.com/in/darshan-khokhariya-78a461283" target='_blank' className="hover:text-primary">
-                                    <FaLinkedin />
+                                    <FaLinkedin className='text-xl' />
                                 </a>
                             </div>
                         </div>

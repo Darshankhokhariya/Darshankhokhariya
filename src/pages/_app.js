@@ -3,6 +3,7 @@ import '../app/globals.css';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import Navbar from '@/components/Nav';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
     useEffect(() => {
@@ -11,9 +12,11 @@ function MyApp({ Component, pageProps }) {
 
     return (
         <>
-            {/* <div className="min-h-screen bg-gradient-to-br from-[#0f2027] via-[#203a43] to-[#2c5364] text-white"> */}
+            <Head>
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
             <Navbar />
-            <div className="min-h-screen  bg-gray-800 text-white">
+            <div className="min-h-screen bg-gray-800 text-white">
                 <Component {...pageProps} />
             </div>
         </>

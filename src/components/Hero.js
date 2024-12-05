@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Hero = () => {
     return (
         <section
@@ -29,12 +31,12 @@ const Hero = () => {
                     data-aos="zoom-in"
                     data-aos-delay="600"
                 >
-                    <a
-                        href="#portfolio"
+                    <Link
+                        href="/projects"
                         className="bg-primary hover:bg-[#50e47d] text-white font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
                     >
                         View My Work
-                    </a>
+                    </Link>
                     <a
                         href="#contact"
                         className="bg-white hover:bg-gray-200 text-gray-900 font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
