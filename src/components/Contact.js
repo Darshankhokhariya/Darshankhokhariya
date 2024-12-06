@@ -90,20 +90,20 @@ const Contact = () => {
                                     darshankhokhariya26@gmail.com
                                 </a>
                             </li>
-                            <li>
+                            {/* <li>
                                 <span className="text-primary font-semibold">Phone:</span>{" "}
                                 <a href="tel:+91 70960 02862" className="text-gray-300 hover:text-white">
                                     +91 70960 02862
                                 </a>
-                            </li>
+                            </li> */}
                             <li>
                                 <span className="text-primary font-semibold">Location:</span>{" "}
                                 <span className="text-gray-300">Surat,Gujarat,India</span>
                             </li>
                         </ul>
-                        <div className="mt-6">
-                            <h4 className="text-lg font-semibold text-primary">Follow Me:</h4>
-                            <div className="mt-4 flex space-x-4">
+                        <div className="mt-6 flex items-center gap-x-2 ">
+                            <h4 className="text-lg font-semibold text-primary">Follow Me :</h4>
+                            <div className=" flex space-x-2">
                                 <a href="https://www.instagram.com/darshank_dev/" target='_blank' className="hover:text-primary">
                                     <FaInstagram className='text-xl' />
                                 </a>

@@ -50,19 +50,19 @@ const Footer = () => {
                             </h4>
                             <ul className="space-y-2 text-sm">
                                 <li>
-                                    <span>Email : </span>
+                                    <span className="font-semibold">Email : </span>
                                     <a href="mailto:darshan@example.com" className="hover:text-primary transition duration-300">
                                         darshankhokhariya26@gmail.com
                                     </a>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <span>Phone : </span>
                                     <a href="tel:+1234567890" className="hover:text-primary transition duration-300">
                                         +91 70960 02862
                                     </a>
-                                </li>
+                                </li> */}
                                 <li>
-                                    <span>Location : </span> Surat,Gujarat,India
+                                    <span className="font-semibold">Location : </span> Surat,Gujarat,India
                                 </li>
                             </ul>
                         </div>

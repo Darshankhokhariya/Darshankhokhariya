@@ -27,17 +27,17 @@ const Portfolio = () => {
         <div className="bg-gray-900 text-white overflow-hidden ">
             {/* Header Section */}
             {/* Header Section */}
-            <header className="flex justify-between items-center py-3 md:py-7 container mx-auto px-6">
-                <h1 className="text-3xl md:text-4xl font-bold font-heading text-primary">
-                    Recent Projects
+            <header className="flex justify-between items-center py-3 md:py-7 container mx-auto px-3 md:px-6">
+                <h1 className="text-3xl md:text-4xl font-bold font-heading text-primary ">
+                    Recent <br className="block md:hidden" /> Projects
                 </h1>
 
-                <button
-                    className="px-6 py-2 text-sm md:text-base font-medium text-white bg-primary rounded-lg hover:bg-green-500 transition duration-300 ease-in-out flex items-center  gap-x-3"
-                >
-                    View All
-                    <FaChevronRight />
-                </button>
+                <Link href="/projects" className="">
+                    <button className="px-6 py-2 text-sm md:text-base font-medium text-white bg-primary rounded-lg hover:bg-green-500 transition duration-300 ease-in-out flex items-center gap-x-3">
+                        View All
+                        <FaChevronRight />
+                    </button>
+                </Link>
 
             </header>
 
