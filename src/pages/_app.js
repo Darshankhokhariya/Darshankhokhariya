@@ -6,6 +6,7 @@ import Navbar from '@/components/Nav';
 import Head from 'next/head';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Footer from '@/components/Footer';
 
 function MyApp({ Component, pageProps }) {
     useEffect(() => {
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }) {
             <div className="min-h-screen bg-gray-800 text-white">
                 <Component {...pageProps} />
             </div>
+            <Footer />
         </>
     );
 }
