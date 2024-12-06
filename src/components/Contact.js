@@ -164,7 +164,6 @@ const Contact = () => {
                             )}
                         </div>
 
-                        {/* Submit Button */}
                         <button
                             type="submit"
                             className="w-full bg-gradient-to-l from-primary via-green-400 to-blue-500 text-white py-3 px-6 rounded-lg flex items-center justify-center gap-3 hover:scale-105 transition-transform"
@@ -173,7 +172,6 @@ const Contact = () => {
                             Send Message
                         </button>
 
-                        {/* Success Message */}
                         {successMessage && (
                             <p className="text-green-500 text-sm mt-4 text-center">{successMessage}</p>
                         )}
