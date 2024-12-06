@@ -19,7 +19,6 @@ function Index() {
             <Services />
             <Portfolio />
             <Contact />
-            <Footer />
 
         </>
     )
