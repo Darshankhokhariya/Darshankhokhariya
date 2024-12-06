@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaInstagram, FaLinkedin, FaPaperPlane } from 'react-icons/fa';
 import emailjs from "@emailjs/browser";
-import { toast } from 'react-hot-toast';
+import { toast } from 'react-toastify';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
