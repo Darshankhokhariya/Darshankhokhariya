@@ -12,7 +12,7 @@ function Index() {
     return (
         <>
 
-         
+
             <Hero />
             <Companies />
             <AboutMe />

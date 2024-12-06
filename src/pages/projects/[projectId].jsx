@@ -51,7 +51,7 @@ const ProjectDetails = () => {
 
     return (
         <div className="container mx-auto py-10 px-4 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold text-center text-white mb-6">
+            <h1 className="text-3xl font-bold text-center text-white mb-6 font-heading">
                 {project.title}
             </h1>
 
@@ -61,6 +61,7 @@ const ProjectDetails = () => {
                 navigation
                 pagination={{ clickable: true }}
                 spaceBetween={20}
+                loop={true}
                 slidesPerView={1}
                 className="max-w-4xl mx-auto rounded-lg shadow-lg"
             >
@@ -70,13 +71,13 @@ const ProjectDetails = () => {
                             <img
                                 src={image}  // Use the correct path
                                 alt={`${project.title} Image ${index + 1}`}
-                                className="object-cover w-full h-64 md:h-full rounded-lg"
+                                className="object-contain w-full h-64 md:h-[70vh] rounded-lg"
                             />
                         </SwiperSlide>
                     );
                 })}
             </Swiper>
-            <p className="text-center text-gray-400 text-lg mt-10">{project.description}</p>
+            <p className="text-center text-gray-400 text-lg mt-10 font-accent">{project.description}</p>
         </div>
     );
 };

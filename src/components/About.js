@@ -12,14 +12,14 @@ const AboutMe = () => {
                 {/* Left Side Content */}
                 <div className="space-y-6">
                     <h2
-                        className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-400"
+                        className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r font-heading from-primary to-green-400"
                         data-aos="fade-down"
                         data-aos-delay="200"
                     >
                         About Me
                     </h2>
                     <p
-                        className="mt-4 text-lg md:text-xl text-gray-300 leading-relaxed"
+                        className="mt-4 text-lg md:text-xl text-gray-300 leading-relaxed font-accent"
                         data-aos="fade-up"
                         data-aos-delay="400"
                     >
@@ -31,7 +31,7 @@ const AboutMe = () => {
                     </p>
 
                     {/* Highlighted Skills */}
-                    <div className="mt-8 space-y-6">
+                    <div className="mt-8 space-y-6 font-body">
                         <div
                             className="flex items-center gap-4"
                             data-aos="fade-right"
@@ -72,7 +72,7 @@ const AboutMe = () => {
                         data-aos-delay="600"
                     >
                         <div className="w-64 h-64 bg-gradient-to-tr from-[#34D399] to-[#60A5FA] rounded-full flex items-center justify-center">
-                            <p className="text-lg md:text-xl font-semibold text-center px-4">
+                            <p className="text-lg md:text-xl font-heading font-semibold text-center px-4">
                                 “Code, Design, and Creativity are the tools I use to shape ideas into
                                 reality.”
                             </p>

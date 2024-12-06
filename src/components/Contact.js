@@ -1,8 +1,66 @@
+import { useState } from 'react';
 import { FaInstagram, FaLinkedin, FaPaperPlane } from 'react-icons/fa';
+import emailjs from "@emailjs/browser";
+import { toast } from 'react-hot-toast';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        message: "",
+    });
+
+    const [errors, setErrors] = useState({});
+    const [successMessage, setSuccessMessage] = useState("");
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const validate = () => {
+        const newErrors = {};
+        if (!formData.name.trim()) newErrors.name = "Name is required.";
+        if (!formData.email.trim()) {
+            newErrors.email = "Email is required.";
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = "Enter a valid email.";
+        }
+        if (!formData.message.trim()) newErrors.message = "Message is required.";
+        return newErrors;
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const validationErrors = validate();
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+        } else {
+            // Use EmailJS to send the email
+            emailjs
+                .send(
+                    "service_4hxsect", // Replace with your EmailJS Service ID
+                    "template_kcxmhpf", // Replace with your EmailJS Template ID
+                    formData,
+                    "K4uZSTd7X71NUzKsW" // Replace with your EmailJS Public Key
+                )
+                .then(
+                    (response) => {
+                        console.log("SUCCESS!", response.status, response.text);
+                        toast.success("Message sent successfully!");  // Success Toast
+                        setFormData({ name: "", email: "", message: "" });
+                        setErrors({});
+                    },
+                    (error) => {
+                        console.error("FAILED...", error);
+                        toast.error("Failed to send message. Please try again later.");  // Error Toast
+                    }
+                );
+        }
+    };
+
     return (
-        <section id="contact" className="py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
+        <section id="contact" className="py-10 md:py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
             <div className="container mx-auto px-6 lg:px-20">
                 <div className="text-center">
                     <h2
@@ -29,7 +87,7 @@ const Contact = () => {
                             <li>
                                 <span className="text-primary font-semibold">Email:</span>{" "}
                                 <a href="mailto:darshankhokhariya26@gmail.com" className="text-gray-300 hover:text-white">
-                                    example@example.com
+                                    darshankhokhariya26@gmail.com
                                 </a>
                             </li>
                             <li>
@@ -56,26 +114,57 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    {/* Contact Form */}
                     <form
                         className="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow space-y-6"
                         data-aos="fade-left"
+                        onSubmit={handleSubmit}
                     >
-                        <input
-                            type="text"
-                            placeholder="Your Name"
-                            className="w-full py-3 px-5 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:outline-none"
-                        />
-                        <input
-                            type="email"
-                            placeholder="Your Email"
-                            className="w-full py-3 px-5 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:outline-none"
-                        />
-                        <textarea
-                            placeholder="Your Message"
-                            rows={4}
-                            className="w-full py-3 px-5 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:outline-none"
-                        />
+                        {/* Name Input */}
+                        <div>
+                            <input
+                                type="text"
+                                name="name"
+                                placeholder="Your Name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                className="w-full py-3 px-5 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:outline-none"
+                            />
+                            {errors.name && (
+                                <p className="text-red-500 text-sm mt-2">{errors.name}</p>
+                            )}
+                        </div>
+
+                        {/* Email Input */}
+                        <div>
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Your Email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                className="w-full py-3 px-5 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:outline-none"
+                            />
+                            {errors.email && (
+                                <p className="text-red-500 text-sm mt-2">{errors.email}</p>
+                            )}
+                        </div>
+
+                        {/* Message Input */}
+                        <div>
+                            <textarea
+                                name="message"
+                                placeholder="Your Message"
+                                rows={4}
+                                value={formData.message}
+                                onChange={handleChange}
+                                className="w-full py-3 px-5 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:outline-none"
+                            />
+                            {errors.message && (
+                                <p className="text-red-500 text-sm mt-2">{errors.message}</p>
+                            )}
+                        </div>
+
+                        {/* Submit Button */}
                         <button
                             type="submit"
                             className="w-full bg-gradient-to-l from-primary via-green-400 to-blue-500 text-white py-3 px-6 rounded-lg flex items-center justify-center gap-3 hover:scale-105 transition-transform"
@@ -83,10 +172,15 @@ const Contact = () => {
                             <FaPaperPlane />
                             Send Message
                         </button>
+
+                        {/* Success Message */}
+                        {successMessage && (
+                            <p className="text-green-500 text-sm mt-4 text-center">{successMessage}</p>
+                        )}
                     </form>
                 </div>
             </div>
-        </section >
+        </section>
     );
 };
 

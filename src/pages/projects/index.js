@@ -61,7 +61,7 @@ const Portfolio = () => {
                                     href={`/projects/${project.title
                                         .toLowerCase()
                                         .replace(/\s+/g, "-")}`}
-                                    className="inline-block bg-gradient-to-r from-teal-400 to-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:scale-105 transition-transform"
+                                    className="inline-block bg-gradient-to-r from-primary to-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:scale-105 transition-transform"
                                 >
                                     View Details
                                 </Link>

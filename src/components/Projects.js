@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import { FaChevronRight } from "react-icons/fa";
+import Link from "next/link";
 
 const Portfolio = () => {
     useEffect(() => {
@@ -23,15 +24,27 @@ const Portfolio = () => {
     ];
 
     return (
-        <div className="bg-gray-900 text-white">
+        <div className="bg-gray-900 text-white overflow-hidden ">
             {/* Header Section */}
-            <header className="text-center py-7">
-                <h1 className="text-4xl font-bold">Recent Projects</h1>
+            {/* Header Section */}
+            <header className="flex justify-between items-center py-3 md:py-7 container mx-auto px-6">
+                <h1 className="text-3xl md:text-4xl font-bold font-heading text-primary">
+                    Recent Projects
+                </h1>
+
+                <button
+                    className="px-6 py-2 text-sm md:text-base font-medium text-white bg-primary rounded-lg hover:bg-green-500 transition duration-300 ease-in-out flex items-center  gap-x-3"
+                >
+                    View All
+                    <FaChevronRight />
+                </button>
+
             </header>
+
 
             {/* Projects Section */}
             {projects.map((project, index) => (
-                <section key={index} className="py-10">
+                <section key={index} className="py-3 md:py-10">
                     <div
                         className="container mx-auto px-4 sm:px-6 lg:px-8"
                         data-aos="fade-up" // AOS Animation
@@ -62,25 +75,20 @@ const Portfolio = () => {
                                     }`}
                                 data-aos="fade-left" // AOS Animation
                             >
-                                <h2 className="text-3xl font-extrabold sm:text-4xl">
+                                <h2 className="text-3xl font-extrabold sm:text-4xl font-heading">
                                     {project?.title}
                                 </h2>
-                                <p className="mt-4 text-gray-300 text-lg">
+                                <p className="my-4 text-gray-300 text-lg font-accent">
                                     {project?.description}
                                 </p>
-                                <div className="flex items-center justify-start mt-8">
-                                    <button className="relative group inline-block px-6 py-3 font-semibold leading-6 text-white bg-gray-800 shadow-2xl rounded-xl transition-transform duration-300 hover:scale-105 active:scale-95">
-                                        <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 opacity-0 p-[2px] group-hover:opacity-100 transition-opacity duration-500"></span>
-                                        <span className="relative z-10 bg-gray-950 rounded-xl">
-                                            <span className="flex items-center space-x-2">
-                                                <span className="transition-transform duration-500 group-hover:translate-x-1">
-                                                    Let&apos;s get started
-                                                </span>
-                                                <FaChevronRight className="w-6 h-6 transition-transform duration-500 group-hover:translate-x-1" />
-                                            </span>
-                                        </span>
-                                    </button>
-                                </div>
+                                <Link
+                                    href={`/projects/${project.title
+                                        .toLowerCase()
+                                        .replace(/\s+/g, "-")}`}
+                                    className="inline-block bg-gradient-to-r from-primary to-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:scale-105 transition-transform"
+                                >
+                                    View Details
+                                </Link>
                             </div>
                         </div>
                     </div>

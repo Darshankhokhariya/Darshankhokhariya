@@ -3,21 +3,21 @@ import Link from "next/link";
 const Hero = () => {
     return (
         <section
-            className="relative h-[100svh] flex items-center justify-center text-white"
+            className="relative h-[100svh] flex items-center justify-center text-white overflow-x-hidden"
             data-aos="fade-up"
             data-aos-duration="1000"
         >
             <div className="container mx-auto text-center px-6">
                 {/* Gradient Text with AOS */}
                 <h1
-                    className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight tracking-wide bg-gradient-to-r from-primary via-green-300 to-blue-500 bg-clip-text text-transparent animate-gradient"
+                    className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold font-heading leading-tight tracking-wide bg-gradient-to-r from-primary via-green-300 to-blue-500 bg-clip-text text-transparent animate-gradient"
                     data-aos="fade-down"
                     data-aos-delay="200"
                 >
                     Hi, I’m Darshan Khokhariya
                 </h1>
                 <p
-                    className="mt-4 sm:mt-6 text-base sm:text-lg md:text-2xl text-[#E3E4E6] max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto"
+                    className="mt-4 sm:mt-6 text-base sm:text-lg md:text-2xl text-[#E3E4E6] max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto font-accent"
                     data-aos="fade-up"
                     data-aos-delay="400"
                 >
@@ -33,13 +33,13 @@ const Hero = () => {
                 >
                     <Link
                         href="/projects"
-                        className="bg-primary hover:bg-[#50e47d] text-white font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
+                        className="bg-primary font-body hover:bg-[#50e47d] text-black font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
                     >
                         View My Work
                     </Link>
                     <a
                         href="#contact"
-                        className="bg-white hover:bg-gray-200 text-gray-900 font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
+                        className="bg-white font-body hover:bg-gray-200 text-gray-900 font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300"
                     >
                         Contact Me
                     </a>
@@ -48,15 +48,16 @@ const Hero = () => {
 
             {/* Decorative Elements */}
             <div
-                className="absolute top-10 left-5 sm:left-9 w-40 h-40 sm:w-60 sm:h-60  bg-gradient-to-r from-blue-500 via-primary to-green-400 rounded-full opacity-20 animate-gradient blur-lg sm:blur-2xl"
+                className="absolute top-10 left-5 sm:left-9 w-28 h-28 md:w-60 md:h-60 bg-gradient-to-r from-blue-500 via-primary to-green-400 rounded-full opacity-20 animate-gradient blur-lg sm:blur-2xl animate-move"
                 data-aos="fade-right"
                 data-aos-delay="800"
             ></div>
             <div
-                className="absolute bottom-10 right-5 sm:right-20 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-gradient-to-r from-blue-500 via-primary to-green-400 rounded-full opacity-20 animate-gradient blur-lg sm:blur-2xl"
+                className="absolute bottom-10 right-5 sm:right-20 w-28 h-28 md:w-60 md:h-60 lg:w-80 lg:h-80 bg-gradient-to-r from-blue-500 via-primary to-green-400 rounded-full opacity-20 animate-gradient blur-lg sm:blur-2xl animate-move"
                 data-aos="fade-right"
                 data-aos-delay="800"
             ></div>
+
             <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
         </section>
     );
