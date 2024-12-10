@@ -1,80 +1,116 @@
+import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Portfolio = () => {
+    const [activeCategory, setActiveCategory] = useState("All");
+
+    const categories = ["All", "Web Application", "Landing Pages", "Applications"];
+
     const projects = [
         {
             title: "Traveldate",
+            category: "Web Application",
             description: "Connect travelers looking to share journeys.",
-            images: [
-                "./images/traveldate/1.jfif",
-            ],
+            images: ["/images/traveldate/1.jfif", "/images/traveldate/2.jfif"],
         },
         {
             title: "Adopus Recruitment Portal",
+            category: "Landing Pages",
             description:
-                "Discover the latest job opportunities tailored for your skills and aspirations. Our user-friendly platform connects job seekers with employers looking for talent.",
-            images: [
-                "./images/adopus2.jpg",
-            ],
+                "Discover the latest job opportunities tailored for your skills and aspirations.",
+            images: ["/images/adopus2.jpg", "/images/adopus1.jpg"],
         },
         {
             title: "Vendor Management",
-            description: "Comprehensive Vendor Management System with role-based access, user authentication, and features to manage vendors, blogs, and events seamlessly.",
-            images: [
-                "./images/canconnect/2.png",
-            ],
+            category: "Web Application",
+            description:
+                "Comprehensive Vendor Management System with role-based access, user authentication, and features to manage vendors, blogs, and events seamlessly.",
+            images: ["/images/canconnect/1.png", "/images/canconnect/2.png"],
         },
         {
-            title: "Comprehensive Pharmaceutical Website Development",
+            title: "Pharmaceutical Website",
+            category: "Landing Pages",
             description:
-                "Designed and developed a user-friendly pharmaceutical website with responsive UI for seamless navigation, efficient product management, and dynamic blog content updates, supported by a robust backend.",
-            images: [
-                "./images/stepmed/3.png",
-            ],
+                "Designed and developed a user-friendly pharmaceutical website with responsive UI for seamless navigation and efficient product management.",
+            images: ["/images/stepmed/1.png", "/images/stepmed/2.png"],
+        },
+        {
+            title: "Vianee Jewels",
+            category: "Web Application",
+            description:
+                "Elegant jewelry management platform with responsive UI for showcasing collections.",
+            images: ["/images/vianee/vianee1.png", "/images/vianee/vianee2.png"],
         },
     ];
 
+    const filteredProjects =
+        activeCategory === "All"
+            ? projects
+            : projects.filter((project) => project.category === activeCategory);
+
     return (
         <div className="bg-gray-900 min-h-screen text-white">
-            {/* Total Projects Section */}
+            {/* Header Section */}
+
             <section className="py-8">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl font-bold">
-                        Completed Projects
-                    </h2>
+                    <h2 className="text-4xl font-bold">My Portfolio</h2>
+                    <p className="text-gray-400 mt-2">
+                        Explore my completed projects across various categories.
+                    </p>
                 </div>
             </section>
 
-            {/* Projects Section */}
-            <div className="container mx-auto px-4 py-8 md:py-12 grid gap-12">
-                {projects.map((project, index) => (
-                    <section
-                        key={index}
-                        className="rounded-lg shadow-lg overflow-hidden bg-gray-800 grid grid-cols-1 md:grid-cols-2"
-                    >
-                        {/* Image */}
-                        <div className="p-4 order-1 ">
-                            <img
-                                src={project.images[0]}
-                                alt={project.title}
-                                className="object-cover w-full h-64 md:h-[700px] rounded-lg"
-                            />
-                        </div>
+            {/* Category Tabs */}
 
-                        {/* Details */}
-                        <div className="p-6 order-2 space-y-4 flex flex-col justify-center">
-                            <h2 className="text-2xl font-bold">{project.title}</h2>
-                            <p className="text-gray-300">{project.description}</p>
+            <div className="container mx-auto px-4">
+                <div className="flex flex-wrap justify-center gap-4 mb-6">
+                    {categories.map((category, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setActiveCategory(category)}
+                            className={`px-4 py-2 rounded-lg text-sm md:text-base ${activeCategory === category
+                                ? "bg-primary text-white"
+                                : "bg-gray-800 text-gray-400"
+                                } hover:bg-primary hover:text-white transition`}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>
+            </div>
+
+            {/* Project Cards */}
+
+            <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filteredProjects.map((project, index) => (
+                    <div
+                        key={index}
+                        className="bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-100 transform transition-transform"
+                    >
+                        <Image
+                            src={project.images[0]}
+                            alt={project.title}
+                            className="w-full h-64 object-cover rounded-lg"
+                            layout="responsive"
+                            width={300}
+                            height={200}
+                        />
+                        <div className="mt-4">
+                            <h3 className="text-xl font-bold">{project.title}</h3>
+                            <p className="text-gray-400 mt-2 truncate">{project.description}</p>
                             <Link
                                 href={`/projects/${project.title
                                     .toLowerCase()
                                     .replace(/\s+/g, "-")}`}
-                                className="inline-block bg-gradient-to-r from-primary to-blue-500 text-white px-6 py-2 rounded-lg shadow-md hover:scale-105 transition-transform w-max"
                             >
-                                View Details
+                                <button className="text-primary mt-4 inline-block">
+                                    View Details
+                                </button>
                             </Link>
                         </div>
-                    </section>
+                    </div>
                 ))}
             </div>
         </div>

@@ -11,7 +11,9 @@ const Navbar = () => {
     return (
         <header className="bg-[#0f2027] w-full z-50 text-[#E3E4E6] shadow-lg sticky top-0 ">
             <div className="container mx-auto flex justify-between items-center py-4 px-6">
-                <h1 className="text-2xl font-bold font-heading">Darshan Khokhariya</h1>
+                <Link href="/">
+                    <h1 className="text-2xl font-bold font-heading">Darshan Khokhariya</h1>
+                </Link>
                 <nav>
                     {/* Desktop Navbar */}
                     <ul className="hidden md:flex space-x-6">

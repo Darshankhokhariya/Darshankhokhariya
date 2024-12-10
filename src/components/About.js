@@ -12,7 +12,7 @@ const AboutMe = () => {
                 {/* Left Side Content */}
                 <div className="space-y-6">
                     <h2
-                        className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r font-heading from-primary to-green-400"
+                        className="text-3xl md:text-5xl font-bold text-primary"
                         data-aos="fade-down"
                         data-aos-delay="200"
                     >
@@ -62,16 +62,16 @@ const AboutMe = () => {
                 {/* Right Side Decorative and Image */}
                 <div className="relative flex items-center justify-center">
                     <div
-                        className="absolute w-72 h-72 bg-gradient-to-tr from-primary to-green-400 rounded-full blur-3xl opacity-20"
+                        className="absolute w-72 h-72 bg-gradient-to-tr from-primary via-[#83b1e9] to-white rounded-full blur-3xl opacity-20"
                         data-aos="zoom-in"
                         data-aos-delay="400"
                     ></div>
                     <div
-                        className="relative w-80 h-80 bg-gradient-to-r from-[#203a43] via-[#2c5364] to-primary rounded-full flex items-center justify-center shadow-lg"
+                        className="relative w-80 h-80 bg-gradient-to-r from-primary via-[#427cc2] to-primary rounded-full border border-gray-500   flex items-center justify-center shadow-lg"
                         data-aos="zoom-in"
                         data-aos-delay="600"
                     >
-                        <div className="w-64 h-64 bg-gradient-to-tr from-[#34D399] to-[#60A5FA] rounded-full flex items-center justify-center">
+                        <div className="w-64 h-64 bg-gradient-to-tr from-primary to-[#79a2d4] rounded-full flex items-center border border-gray-400 justify-center">
                             <p className="text-lg md:text-xl font-heading font-semibold text-center px-4">
                                 “Code, Design, and Creativity are the tools I use to shape ideas into
                                 reality.”

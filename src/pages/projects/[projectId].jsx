@@ -17,30 +17,41 @@ const projectData = {
     "adopus-recruitment-portal": {
         title: "Adopus Recruitment Portal",
         description:
-            "Discover the latest job opportunities tailored for your skills and aspirations. Our user-friendly platform connects job seekers with employers looking for talent.",
+            "Discover the latest job opportunities tailored for your skills and aspirations.",
         images: [
             "/images/adopus2.jpg",
             "/images/adopus1.jpg",
         ],
     },
     "vendor-management": {
-        title: "Vendor management",
-        description: "Comprehensive Vendor Management System with role-based access, user authentication, and features to manage vendors, blogs, and events seamlessly.",
+        title: "Vendor Management",
+        description:
+            "Comprehensive Vendor Management System with role-based access, user authentication, and features to manage vendors, blogs, and events seamlessly.",
         images: [
-            "/images/canconnect/2.png",
             "/images/canconnect/1.png",
+            "/images/canconnect/2.png",
         ],
     },
-    "comprehensive-pharmaceutical-website-development": {
-        title: "Comprehensive Pharmaceutical Website Development",
+    "pharmaceutical-website": {
+        title: "Pharmaceutical Website",
         description:
-            "Designed and developed a user-friendly pharmaceutical website with responsive UI for seamless navigation, efficient product management, and dynamic blog content updates, supported by a robust backend.",
+            "Designed and developed a user-friendly pharmaceutical website with responsive UI for seamless navigation and efficient product management.",
         images: [
-            "/images/stepmed/3.png",
+            "/images/stepmed/1.png",
             "/images/stepmed/2.png",
         ],
     },
+    "vianee-jewels": {
+        title: "Vianee Jewels",
+        description:
+            "Elegant jewelry management platform with responsive UI for showcasing collections.",
+        images: [
+            "/images/vianee/vianee1.png",
+            "/images/vianee/vianee2.png",
+        ],
+    },
 };
+
 
 const ProjectDetails = () => {
     const router = useRouter();

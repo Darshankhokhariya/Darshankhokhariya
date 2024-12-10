@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#40c166",
+        primary: "#60A5FA",
       },
       backgroundImage: {
         'gradient-text': 'linear-gradient(to right, #40c166, #3d5afe, #ff6ec7)',

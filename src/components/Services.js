@@ -11,37 +11,31 @@ const Services = () => {
             title: "Full-Stack Development",
             description: "Building modern, scalable, and secure web applications with seamless user experience.",
             icon: <FaCode className="text-6xl text-white" />,
-            bg: "from-[#6EE7B7] to-[#3B82F6]",
         },
         {
             title: "UI/UX Design",
             description: "Crafting visually stunning and intuitive interfaces that elevate user satisfaction.",
             icon: <FaPalette className="text-6xl text-white" />,
-            bg: "from-[#F87171] to-[#FB923C]",
         },
         {
             title: "Mobile App Development",
             description: "Developing feature-rich mobile applications with smooth performance for iOS and Android.",
             icon: <FaMobileAlt className="text-6xl text-white" />,
-            bg: "from-[#8B5CF6] to-[#EC4899]",
         },
         {
             title: "Cloud Integration",
             description: "Optimizing workflows with cloud-based solutions for improved scalability and efficiency.",
             icon: <FaCloud className="text-6xl text-white" />,
-            bg: "from-[#34D399] to-[#60A5FA]",
         },
         {
             title: "SEO Optimization",
             description: "Enhancing website visibility and performance to rank higher in search engine results.",
             icon: <FaSearch className="text-6xl text-white" />,
-            bg: "from-[#FBBF24] to-[#F97316]",
         },
         {
             title: "Startup Launch Support",
             description: "Helping startups get off the ground with technology solutions and consulting services.",
             icon: <FaRocket className="text-6xl text-white" />,
-            bg: "from-[#3B82F6] to-[#9333EA]",
         },
     ];
 
@@ -84,7 +78,7 @@ const Services = () => {
                         {services.map((service, index) => (
                             <SwiperSlide key={index} className="max-w-xs">
                                 <div
-                                    className={`p-8 rounded-xl shadow-xl bg-gradient-to-r ${service.bg} text-center`}
+                                    className={`p-8 rounded-xl shadow-xl bg-gradient-to-r from-[#60A5FA] to-[#2563EB] text-center`}
                                     data-aos="zoom-in"
                                     data-aos-delay={index * 100 + 300}
                                 >

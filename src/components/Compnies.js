@@ -22,7 +22,7 @@ const Companies = () => {
             <div className="container mx-auto px-6 text-center">
                 {/* Section Heading */}
                 <h2
-                    className="text-3xl md:text-5xl font-bold font-heading text-start md:text-center text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-400"
+                    className="text-3xl md:text-5xl font-bold font-heading text-start md:text-center text-primary"
                     data-aos="fade-down"
                 >
                     Companies I&apos;ve Worked With
@@ -77,7 +77,7 @@ const Companies = () => {
                     </Swiper>
                 </div>
             </div>
-        </section>
+        </section >
     );
 };
 

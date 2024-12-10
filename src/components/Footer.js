@@ -10,7 +10,7 @@ const Footer = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* About Me */}
                         <div className="text-center md:text-left">
-                            <h4 className="text-2xl font-bold text-white mb-4">
+                            <h4 className="text-2xl font-bold text-primary mb-4">
                                 About Me
                             </h4>
                             <p className="text-sm">
@@ -45,7 +45,7 @@ const Footer = () => {
 
                         {/* Contact Info */}
                         <div className="text-center md:text-right">
-                            <h4 className="text-2xl font-bold text-white mb-4">
+                            <h4 className="text-2xl font-bold text-primary mb-4">
                                 Get in Touch
                             </h4>
                             <ul className="space-y-2 text-sm">

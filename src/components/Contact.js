@@ -64,7 +64,7 @@ const Contact = () => {
             <div className="container mx-auto px-6 lg:px-20">
                 <div className="text-center">
                     <h2
-                        className="text-4xl md:text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary to-cyan-500"
+                        className="text-4xl md:text-5xl font-extrabold text-primary"
                         data-aos="zoom-in"
                         data-aos-duration="1000"
                     >
@@ -85,7 +85,7 @@ const Contact = () => {
                         <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
                         <ul className="space-y-4">
                             <li>
-                                <span className="text-primary font-semibold">Email:</span>{" "}
+                                <span className="text-primary font-semibold">Email : </span>{" "}
                                 <a href="mailto:darshankhokhariya26@gmail.com" className="text-gray-300 hover:text-white">
                                     darshankhokhariya26@gmail.com
                                 </a>
@@ -97,7 +97,7 @@ const Contact = () => {
                                 </a>
                             </li> */}
                             <li>
-                                <span className="text-primary font-semibold">Location:</span>{" "}
+                                <span className="text-primary font-semibold">Location : </span>{" "}
                                 <span className="text-gray-300">Surat,Gujarat,India</span>
                             </li>
                         </ul>
@@ -166,7 +166,7 @@ const Contact = () => {
 
                         <button
                             type="submit"
-                            className="w-full bg-gradient-to-l from-primary via-green-400 to-blue-500 text-white py-3 px-6 rounded-lg flex items-center justify-center gap-3 hover:scale-105 transition-transform"
+                            className="w-full bg-gradient-to-r from-primary to-[#5791d4] text-white py-3 px-6 rounded-lg flex items-center justify-center gap-3 hover:scale-105 transition-transform"
                         >
                             <FaPaperPlane />
                             Send Message
