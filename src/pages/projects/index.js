@@ -55,7 +55,7 @@ const Portfolio = () => {
 
             <section className="py-8">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-4xl font-bold">My Portfolio</h2>
+                    <h2 className="text-4xl font-bold">Your Vision, Perfected in Code</h2>
                     <p className="text-gray-400 mt-2">
                         Explore my completed projects across various categories.
                     </p>

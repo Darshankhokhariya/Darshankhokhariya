@@ -11,7 +11,8 @@ const Companies = () => {
         { name: "AdOpus", logo: "./images/compnies/adopuslogo.png" },
         { name: "Satadhar", logo: "./images/compnies/satadhar.png" },
         { name: "Belite", logo: "./images/compnies/belite.png" },
-        { name: "Vianee", logo: "./images/compnies/Vianee.webp" },
+        // { name: "Vianee", logo: "./images/compnies/Vianee.webp" },
+        { name: "can-connect", logo: "./images/compnies/canconnect.png" },
     ];
 
     return (

@@ -1,5 +1,8 @@
 import { useState } from "react";
 import Link from "next/link";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
+
+
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +25,8 @@ const Navbar = () => {
                     </ul>
 
                     {/* Mobile Navbar */}
-                    <div className="md:hidden ">
+                    {/* Mobile Navbar */}
+                    <div className="md:hidden">
                         <button onClick={toggleMenu} className="text-2xl">
                             {isMenuOpen ? "✕" : "☰"}
                         </button>
@@ -30,9 +34,23 @@ const Navbar = () => {
                             <ul className="absolute top-16 left-0 w-full bg-[#0f2027] text-start px-10 space-y-4 py-4 h-[100svh]">
                                 <li><Link href="/" onClick={toggleMenu} className="text-base text-[#E3E4E6] uppercase">Home</Link></li>
                                 <li><Link href="/projects" onClick={toggleMenu} className="text-base text-[#E3E4E6] uppercase">Projects</Link></li>
+
+
+
+                                <div className="flex   gap-x-2">
+                                    {/* Social Media Links with Icons */}
+                                    <li><a href="https://www.instagram.com/darshank_dev/" target="_blank" rel="noopener noreferrer" onClick={toggleMenu} className="flex items-center space-x-2 text-base text-[#E3E4E6] uppercase">
+                                        <FaInstagram className="text-xl" />
+                                    </a></li>
+                                    <li><a href="http://www.linkedin.com/in/darshan-khokhariya-78a461283" target="_blank" rel="noopener noreferrer" onClick={toggleMenu} className="flex items-center space-x-2 text-base text-[#E3E4E6] uppercase">
+                                        <FaLinkedin className="text-xl" />
+                                    </a></li>
+                                </div>
                             </ul>
                         )}
                     </div>
+
+
                 </nav>
             </div>
         </header>

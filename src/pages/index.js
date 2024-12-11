@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
 import Navbar from '@/components/Nav'
 import Portfolio from '@/components/Projects'
-import Services from '@/components/Services'
+import Services from '@/components/Technologies'
 import React from 'react'
 
 function Index() {

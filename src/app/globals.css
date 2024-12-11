@@ -16,7 +16,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #40c166, #6bf3bf, #3d9cad); /* Thumb gradient */
+  background: linear-gradient(to bottom, #60A5FA, #a2bfe4, #f3f4f6); /* Thumb gradient with new primary color */
   border-radius: 10px;
 }
 
