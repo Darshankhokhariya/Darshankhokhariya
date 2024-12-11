@@ -3,7 +3,7 @@ import Link from "next/link";
 const Hero = () => {
     return (
         <section
-            className="relative flex flex-col h-[90svh] items-center justify-center text-white bg-cover bg-center bg-no-repeat overflow-x-hidden overflow-y-hidden"
+            className="relative flex flex-col h-full items-center justify-center text-white bg-cover bg-center bg-no-repeat overflow-x-hidden overflow-y-hidden"
             style={{ backgroundImage: "url('/images/bg.png')" }}
             data-aos-duration="1000"
         >
