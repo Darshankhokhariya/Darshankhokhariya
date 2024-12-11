@@ -50,7 +50,7 @@ const Portfolio = () => {
             : projects.filter((project) => project.category === activeCategory);
 
     return (
-        <div className="bg-gray-900 min-h-screen text-white">
+        <div className="bg-gray-900 min-h-screen text-white px-2 md:px-10">
             {/* Header Section */}
 
             <section className="py-8">

@@ -72,10 +72,10 @@ const Technologies = () => {
 
     return (
         <section id="technologies" className="py-20 text-white bg-gradient-to-b from-gray-900 to-[#1E293B]">
-            <div className="container mx-auto text-center px-6">
+            <div className=" text-center md:px-6">
                 {/* Section Heading */}
                 <h2
-                    className="text-3xl md:text-5xl font-bold font-heading text-primary text-start md:text-center"
+                    className="text-3xl md:text-5xl font-bold font-heading text-primary text-center md:text-center"
                     data-aos="fade-up"
                 >
                     Technologies I Work With

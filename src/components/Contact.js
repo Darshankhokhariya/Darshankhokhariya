@@ -9,15 +9,10 @@ const Contact = () => {
         email: "",
         message: "",
     });
-
     const [errors, setErrors] = useState({});
-    const [successMessage, setSuccessMessage] = useState("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
+    // Validation function
     const validate = () => {
         const newErrors = {};
         if (!formData.name.trim()) newErrors.name = "Name is required.";
@@ -30,32 +25,49 @@ const Contact = () => {
         return newErrors;
     };
 
-    const handleSubmit = (e) => {
+    // Form submission handler
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const validationErrors = validate();
         if (Object.keys(validationErrors).length > 0) {
             setErrors(validationErrors);
-        } else {
-            // Use EmailJS to send the email
-            emailjs
-                .send(
-                    "service_4hxsect", // Replace with your EmailJS Service ID
-                    "template_kcxmhpf", // Replace with your EmailJS Template ID
-                    formData,
-                    "K4uZSTd7X71NUzKsW" // Replace with your EmailJS Public Key
-                )
-                .then(
-                    (response) => {
-                        console.log("SUCCESS!", response.status, response.text);
-                        toast.success("Message sent successfully!");  // Success Toast
-                        setFormData({ name: "", email: "", message: "" });
-                        setErrors({});
-                    },
-                    (error) => {
-                        console.error("FAILED...", error);
-                        toast.error("Failed to send message. Please try again later.");  // Error Toast
-                    }
-                );
+            return;
+        }
+
+        setIsSubmitting(true);
+        try {
+            // Ensure formData properties match your EmailJS template placeholders
+            const templateParams = {
+                to_name: "Recipient's Name",   // You can replace this with a dynamic recipient if needed
+                from_name: formData.name,      // Sender's name (from the form data)
+                from_email: formData.email,    // Sender's email (from the form data)
+                message: formData.message,     // Message content (from the form data)
+            };
+
+            const response = await emailjs.send(
+                "service_8g0v81a", // Your Service ID
+                "template_2f2kot7", // Your Template ID
+                templateParams, // The mapped data
+                "K4uZSTd7X71NUzKsW" // Your Public Key
+            );
+            toast.success("Message sent successfully!");
+            setFormData({ name: "", email: "", message: "" });
+            setErrors({});
+        } catch (error) {
+            toast.error("Failed to send message. Please try again later.");
+            console.error("Email sending failed:", error);
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
+
+
+    // Dynamic onChange handler
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({ ...prevData, [name]: value }));
+        if (errors[name]) {
+            setErrors((prevErrors) => ({ ...prevErrors, [name]: undefined }));
         }
     };
 
@@ -90,12 +102,6 @@ const Contact = () => {
                                     darshankhokhariya26@gmail.com
                                 </a>
                             </li>
-                            {/* <li>
-                                <span className="text-primary font-semibold">Phone:</span>{" "}
-                                <a href="tel:+91 70960 02862" className="text-gray-300 hover:text-white">
-                                    +91 70960 02862
-                                </a>
-                            </li> */}
                             <li>
                                 <span className="text-primary font-semibold">Location : </span>{" "}
                                 <span className="text-gray-300">Surat,Gujarat,India</span>
@@ -114,67 +120,98 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    <form
-                        className="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow space-y-6"
-                        data-aos="fade-left"
-                        onSubmit={handleSubmit}
-                    >
-                        {/* Name Input */}
-                        <div>
+                    <form onSubmit={handleSubmit} noValidate>
+                        <div className="mb-4">
+                            <label
+                                htmlFor="name"
+                                className="block text-gray-700 font-medium mb-2"
+                            >
+                                Name
+                            </label>
                             <input
                                 type="text"
+                                id="name"
                                 name="name"
-                                placeholder="Your Name"
                                 value={formData.name}
                                 onChange={handleChange}
-                                className="w-full py-3 px-5 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:outline-none"
+                                className={`w-full px-4 py-2 border text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors.name ? "border-red-500" : "border-gray-300"
+                                    }`}
+                                aria-invalid={!!errors.name}
+                                aria-describedby="name-error"
                             />
                             {errors.name && (
-                                <p className="text-red-500 text-sm mt-2">{errors.name}</p>
+                                <p
+                                    id="name-error"
+                                    className="text-red-500 text-sm mt-1"
+                                >
+                                    {errors.name}
+                                </p>
                             )}
                         </div>
 
-                        {/* Email Input */}
-                        <div>
+                        <div className="mb-4">
+                            <label
+                                htmlFor="email"
+                                className="block text-gray-700 font-medium mb-2"
+                            >
+                                Email
+                            </label>
                             <input
                                 type="email"
+                                id="email"
                                 name="email"
-                                placeholder="Your Email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className="w-full py-3 px-5 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:outline-none"
+                                className={`w-full px-4 py-2 border text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors.email ? "border-red-500" : "border-gray-300"
+                                    }`}
+                                aria-invalid={!!errors.email}
+                                aria-describedby="email-error"
                             />
                             {errors.email && (
-                                <p className="text-red-500 text-sm mt-2">{errors.email}</p>
+                                <p
+                                    id="email-error"
+                                    className="text-red-500 text-sm mt-1"
+                                >
+                                    {errors.email}
+                                </p>
                             )}
                         </div>
 
-                        {/* Message Input */}
-                        <div>
+                        <div className="mb-4">
+                            <label
+                                htmlFor="message"
+                                className="block text-gray-700 font-medium mb-2"
+                            >
+                                Message
+                            </label>
                             <textarea
+                                id="message"
                                 name="message"
-                                placeholder="Your Message"
-                                rows={4}
                                 value={formData.message}
                                 onChange={handleChange}
-                                className="w-full py-3 px-5 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-primary focus:outline-none"
-                            />
+                                className={`w-full px-4 py-2 border text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors.message ? "border-red-500" : "border-gray-300"
+                                    }`}
+                                rows="5"
+                                aria-invalid={!!errors.message}
+                                aria-describedby="message-error"
+                            ></textarea>
                             {errors.message && (
-                                <p className="text-red-500 text-sm mt-2">{errors.message}</p>
+                                <p
+                                    id="message-error"
+                                    className="text-red-500 text-sm mt-1"
+                                >
+                                    {errors.message}
+                                </p>
                             )}
                         </div>
 
                         <button
                             type="submit"
-                            className="w-full bg-gradient-to-r from-primary to-[#5791d4] text-white py-3 px-6 rounded-lg flex items-center justify-center gap-3 hover:scale-105 transition-transform"
+                            className="w-full bg-green-500 text-white py-2 px-4 rounded-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary disabled:bg-gray-400"
+                            disabled={isSubmitting}
                         >
-                            <FaPaperPlane />
-                            Send Message
+                            {isSubmitting ? "Sending..." : "Send Message"}
                         </button>
-
-                        {successMessage && (
-                            <p className="text-green-500 text-sm mt-4 text-center">{successMessage}</p>
-                        )}
                     </form>
                 </div>
             </div>

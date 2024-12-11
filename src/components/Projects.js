@@ -24,10 +24,10 @@ const Portfolio = () => {
     ];
 
     return (
-        <div className="bg-gray-900 text-white overflow-hidden ">
+        <div className="bg-gray-900 text-white overflow-hidden md:px-10 ">
             {/* Header Section */}
             {/* Header Section */}
-            <header className="flex justify-between items-center py-3 md:py-7 container mx-auto px-3 md:px-6">
+            <header className="flex justify-between items-center py-3 md:py-7 container mx-auto px-3 md:px-2 lg:px-4">
                 <h1 className="text-3xl md:text-4xl font-bold font-heading text-primary ">
                     Recent <br className="block md:hidden" /> Projects
                 </h1>
@@ -35,7 +35,7 @@ const Portfolio = () => {
                 <Link href="/projects" className="">
                     <button className="px-6 py-2 text-sm md:text-base font-medium text-white bg-primary rounded-lg hover:bg-green-500 transition duration-300 ease-in-out flex items-center gap-x-3">
                         View All
-                        <FaChevronRight />
+                        <FaChevronRight className="hidden md:block" />
                     </button>
                 </Link>
 
@@ -50,7 +50,7 @@ const Portfolio = () => {
                         data-aos="fade-up" // AOS Animation
                     >
                         <div
-                            className={`grid grid-cols-1 md:grid-cols-2 items-center gap-8 ${index % 2 === 0
+                            className={`grid grid-cols-1 lg:grid-cols-2 items-center gap-8 ${index % 2 === 0
                                 ? "order-1"
                                 : "order-2"
                                 }`}
@@ -58,7 +58,7 @@ const Portfolio = () => {
                             <div
                                 className={`mt-12 md:mt-0 md:h-[500px] w-full ${index % 2 === 0
                                     ? "order-1"
-                                    : "order-1 md:order-2"
+                                    : "order-1 lg:order-2"
                                     }`}
                                 data-aos="fade-right" // AOS Animation
                             >

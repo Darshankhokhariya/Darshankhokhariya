@@ -62,23 +62,24 @@ const AboutMe = () => {
                 {/* Right Side Decorative and Image */}
                 <div className="relative flex items-center justify-center">
                     <div
-                        className="absolute w-72 h-72 bg-gradient-to-tr from-primary via-[#83b1e9] to-white rounded-full blur-3xl opacity-20"
+                        className="absolute w-40 h-40 sm:w-72 sm:h-72 bg-gradient-to-tr from-primary via-[#83b1e9] to-white rounded-full blur-2xl sm:blur-3xl opacity-20"
                         data-aos="zoom-in"
                         data-aos-delay="400"
                     ></div>
                     <div
-                        className="relative w-80 h-80 bg-gradient-to-r from-primary via-[#427cc2] to-primary rounded-full border border-gray-500   flex items-center justify-center shadow-lg"
+                        className="relative w-56 h-56 sm:w-80 sm:h-80 bg-gradient-to-r from-primary via-[#427cc2] to-primary rounded-full border border-gray-500 flex items-center justify-center shadow-lg"
                         data-aos="zoom-in"
                         data-aos-delay="600"
                     >
-                        <div className="w-64 h-64 bg-gradient-to-tr from-primary to-[#79a2d4] rounded-full flex items-center border border-gray-400 justify-center">
-                            <p className="text-lg md:text-xl font-heading font-semibold text-center px-4">
+                        <div className="w-44 h-44 sm:w-64 sm:h-64 bg-gradient-to-tr from-primary to-[#79a2d4] rounded-full flex items-center border border-gray-400 justify-center">
+                            <p className="text-sm sm:text-lg md:text-xl font-heading font-semibold text-center px-2 sm:px-4">
                                 “Code, Design, and Creativity are the tools I use to shape ideas into
                                 reality.”
                             </p>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
     );
