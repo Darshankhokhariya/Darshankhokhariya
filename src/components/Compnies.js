@@ -6,10 +6,12 @@ import { Autoplay } from "swiper/modules";
 const Companies = () => {
     // Example list of company logos or names (replace with actual logos)
     const companies = [
-        { name: "Traveldate", logo: "./images/Traveldate.png" },
-        { name: "Stepmade", logo: "./images/stepmade.png" },
-        { name: "AdOpus", logo: "./images/adopuslogo.png" },
-        { name: "Satadhar", logo: "./images/satadhar.png" },
+        { name: "Traveldate", logo: "./images/compnies/Traveldate.png" },
+        { name: "Stepmade", logo: "./images/compnies/stepmade.png" },
+        { name: "AdOpus", logo: "./images/compnies/adopuslogo.png" },
+        { name: "Satadhar", logo: "./images/compnies/satadhar.png" },
+        { name: "Belite", logo: "./images/compnies/belite.png" },
+        { name: "Vianee", logo: "./images/compnies/Vianee.webp" },
     ];
 
     return (
@@ -37,7 +39,7 @@ const Companies = () => {
 
                 {/* Swiper Slider */}
                 <div
-                    className="mt-12"
+                    className="md:mt-12"
                     data-aos="zoom-in"
                     data-aos-delay="400"
                 >

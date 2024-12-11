@@ -16,10 +16,10 @@ const Portfolio = () => {
             image: "./images/traveldate/1.jfif",
         },
         {
-            title: "Adopus recruitment portal",
+            title: "Vendor Management",
             description:
-                "Discover the latest job opportunities tailored for your skills and aspirations. Our user-friendly platform connects job seekers with employers looking for talent.",
-            image: "./images/adopus2.jpg",
+                "Comprehensive Vendor Management System with role-based access, user authentication, and features to manage vendors, blogs, and events seamlessly.",
+            image: "./images/canconnect/1.png",
         },
     ];
 

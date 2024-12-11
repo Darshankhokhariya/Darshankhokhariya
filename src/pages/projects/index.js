@@ -19,7 +19,7 @@ const Portfolio = () => {
             category: "Landing Pages",
             description:
                 "Discover the latest job opportunities tailored for your skills and aspirations.",
-            images: ["/images/adopus2.jpg", "/images/adopus1.jpg"],
+            images: ["/images/adopus/adopus2.jpg", "/images/adopus/adopus1.jpg"],
         },
         {
             title: "Vendor Management",
@@ -83,20 +83,20 @@ const Portfolio = () => {
 
             {/* Project Cards */}
 
-            <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredProjects.map((project, index) => (
                     <div
                         key={index}
-                        className="bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-100 transform transition-transform"
+                        className="bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-105 transform transition-transform"
                     >
-                        <Image
-                            src={project.images[0]}
-                            alt={project.title}
-                            className="w-full h-64 object-cover rounded-lg"
-                            layout="responsive"
-                            width={300}
-                            height={200}
-                        />
+                        <div className="relative w-full h-64">
+                            <Image
+                                src={project.images[0]}
+                                alt={project.title}
+                                className="object-cover rounded-lg"
+                                layout="fill"
+                            />
+                        </div>
                         <div className="mt-4">
                             <h3 className="text-xl font-bold">{project.title}</h3>
                             <p className="text-gray-400 mt-2 truncate">{project.description}</p>

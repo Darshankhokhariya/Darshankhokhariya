@@ -9,7 +9,7 @@ const Navbar = () => {
     };
 
     return (
-        <header className="bg-[#0f2027] w-full z-50 text-[#E3E4E6] shadow-lg sticky top-0 ">
+        <header className="bg-[#0f2027] w-full z-50 text-[#E3E4E6] shadow-lg sticky top-0">
             <div className="container mx-auto flex justify-between items-center py-4 px-6">
                 <Link href="/">
                     <h1 className="text-2xl font-bold font-heading">Darshan Khokhariya</h1>
@@ -27,9 +27,9 @@ const Navbar = () => {
                             {isMenuOpen ? "✕" : "☰"}
                         </button>
                         {isMenuOpen && (
-                            <ul className="absolute top-16 left-0 w-full bg-[#0f2027] text-start px-10 space-y-4 py-4">
-                                <li><Link href="/" className="text-base text-[#E3E4E6] uppercase">Home</Link></li>
-                                <li><Link href="/projects" className="text-base text-[#E3E4E6] uppercase">Projects</Link></li>
+                            <ul className="absolute top-16 left-0 w-full bg-[#0f2027] text-start px-10 space-y-4 py-4 h-[100svh]">
+                                <li><Link href="/" onClick={toggleMenu} className="text-base text-[#E3E4E6] uppercase">Home</Link></li>
+                                <li><Link href="/projects" onClick={toggleMenu} className="text-base text-[#E3E4E6] uppercase">Projects</Link></li>
                             </ul>
                         )}
                     </div>

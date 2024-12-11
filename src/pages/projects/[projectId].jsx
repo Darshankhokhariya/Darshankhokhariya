@@ -19,8 +19,8 @@ const projectData = {
         description:
             "Discover the latest job opportunities tailored for your skills and aspirations.",
         images: [
-            "/images/adopus2.jpg",
-            "/images/adopus1.jpg",
+            "/images/adopus/adopus2.jpg",
+            "/images/adopus/adopus1.jpg",
         ],
     },
     "vendor-management": {

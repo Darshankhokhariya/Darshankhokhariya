@@ -4,7 +4,7 @@ const AboutMe = () => {
     return (
         <section
             id="about"
-            className="relative py-20  text-white"
+            className="relative py-4 md:py-20  text-white"
             data-aos="fade-up"
             data-aos-duration="1000"
         >
