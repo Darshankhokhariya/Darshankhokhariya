@@ -42,6 +42,13 @@ const Portfolio = () => {
                 "Elegant jewelry management platform with responsive UI for showcasing collections.",
             images: ["/images/vianee/vianee1.png", "/images/vianee/vianee2.png"],
         },
+        {
+            title: "Application Overview",
+            category: "Landing Pages",
+            description:
+                "A beautifully crafted landing page that provides a comprehensive overview of the application. Designed with a responsive and visually appealing layout, it effectively highlights the application's features and functionality, offering an engaging user experience.",
+            images: ["/images/landing.png"],
+        },
     ];
 
     const filteredProjects =

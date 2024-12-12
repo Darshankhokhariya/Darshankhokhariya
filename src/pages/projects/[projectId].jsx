@@ -50,6 +50,15 @@ const projectData = {
             "/images/vianee/vianee2.png",
         ],
     },
+    "a  pplication-overview": {
+        title: "Application Overview",
+        description:
+            "A beautifully crafted landing page that provides a comprehensive overview of the application. Designed with a responsive and visually appealing layout, it effectively highlights the application's features and functionality, offering an engaging user experience.",
+        images: [
+            "/images/landing.png"
+        ]
+    }
+
 };
 
 

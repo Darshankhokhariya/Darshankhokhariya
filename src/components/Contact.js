@@ -124,7 +124,7 @@ const Contact = () => {
                         <div className="mb-4">
                             <label
                                 htmlFor="name"
-                                className="block text-gray-700 font-medium mb-2"
+                                className="block text-gray-600 font-medium mb-2"
                             >
                                 Name
                             </label>
@@ -134,7 +134,7 @@ const Contact = () => {
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
-                                className={`w-full px-4 py-2 border text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors.name ? "border-red-500" : "border-gray-300"
+                                className={`w-full px-4 py-2 border bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors.name ? "border-red-500" : "border-gray-300"
                                     }`}
                                 aria-invalid={!!errors.name}
                                 aria-describedby="name-error"
@@ -152,7 +152,7 @@ const Contact = () => {
                         <div className="mb-4">
                             <label
                                 htmlFor="email"
-                                className="block text-gray-700 font-medium mb-2"
+                                className="block text-gray-600 font-medium mb-2"
                             >
                                 Email
                             </label>
@@ -162,7 +162,7 @@ const Contact = () => {
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
-                                className={`w-full px-4 py-2 border text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors.email ? "border-red-500" : "border-gray-300"
+                                className={`w-full px-4 py-2 border bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors.email ? "border-red-500" : "border-gray-300"
                                     }`}
                                 aria-invalid={!!errors.email}
                                 aria-describedby="email-error"
@@ -180,7 +180,7 @@ const Contact = () => {
                         <div className="mb-4">
                             <label
                                 htmlFor="message"
-                                className="block text-gray-700 font-medium mb-2"
+                                className="block text-gray-600 font-medium mb-2"
                             >
                                 Message
                             </label>
@@ -189,7 +189,7 @@ const Contact = () => {
                                 name="message"
                                 value={formData.message}
                                 onChange={handleChange}
-                                className={`w-full px-4 py-2 border text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors.message ? "border-red-500" : "border-gray-300"
+                                className={`w-full px-4 py-2 border bg-gray-800 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-primary ${errors.message ? "border-red-500" : "border-gray-300"
                                     }`}
                                 rows="5"
                                 aria-invalid={!!errors.message}
