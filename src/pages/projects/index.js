@@ -98,17 +98,17 @@ const Portfolio = () => {
                     >
                         <div className="relative w-full h-64">
                             <Image
-                                src={project?.images[0]?.src}
+                                src={project?.images[0]}
                                 alt={project?.title}
                                 className="object-cover rounded-lg"
                                 layout="fill"
                             />
                         </div>
                         <div className="mt-4">
-                            <h3 className="text-xl font-bold">{project?.title}</h3>
-                            <p className="text-gray-400 mt-2 truncate">{project?.description}</p>
+                            <h3 className="text-xl font-bold">{project.title}</h3>
+                            <p className="text-gray-400 mt-2 truncate">{project.description}</p>
                             <Link
-                                href={`/projects/${project?.title
+                                href={`/projects/${project.title
                                     .toLowerCase()
                                     .replace(/\s+/g, "-")}`}
                             >
