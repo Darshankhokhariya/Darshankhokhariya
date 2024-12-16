@@ -12,7 +12,7 @@ const Portfolio = () => {
             title: "Traveldate",
             category: "Web Application",
             description: "Connect travelers looking to share journeys.",
-            images: ["/images/traveldate/1.jfif", "/images/traveldate/2.jfif"],
+            images: ["/images/traveldate/1.jpg", "/images/traveldate/2.jfif"],
         },
         {
             title: "Adopus Recruitment Portal",
