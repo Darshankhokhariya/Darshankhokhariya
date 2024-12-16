@@ -10,8 +10,8 @@ const projectData = {
         title: "Traveldate",
         description: "Connect travelers looking to share journeys.",
         images: [
-            "/images/traveldate/1.jfif",
-            "/images/traveldate/2.jfif",
+            "/images/traveldate/1.jpg",
+            "/images/traveldate/2.jpg",
         ],
     },
     "adopus-recruitment-portal": {
@@ -64,7 +64,7 @@ const projectData = {
 
 const ProjectDetails = () => {
     const router = useRouter();
-    const { projectId } = router.query;
+    const { projectId } = router?.query;
     const project = projectData[projectId];
 
     if (!project) return <p className="text-center py-20 text-gray-500">Loading...</p>;
@@ -72,7 +72,7 @@ const ProjectDetails = () => {
     return (
         <div className="container mx-auto py-10 px-4 sm:px-6 lg:px-8">
             <h1 className="text-3xl font-bold text-center text-white mb-6 font-heading">
-                {project.title}
+                {project?.title}
             </h1>
 
             {/* Swiper Carousel */}
@@ -85,19 +85,19 @@ const ProjectDetails = () => {
                 slidesPerView={1}
                 className="max-w-4xl mx-auto rounded-lg shadow-lg"
             >
-                {project.images.map((image, index) => {
+                {project?.images?.map((image, index) => {
                     return (
                         <SwiperSlide key={index}>
                             <img
                                 src={image}  // Use the correct path
-                                alt={`${project.title} Image ${index + 1}`}
+                                alt={`${project?.title} Image ${index + 1}`}
                                 className="object-contain w-full h-64 md:h-[70vh] rounded-lg"
                             />
                         </SwiperSlide>
                     );
                 })}
             </Swiper>
-            <p className="text-center text-gray-400 text-lg mt-10 font-accent">{project.description}</p>
+            <p className="text-center text-gray-400 text-lg mt-10 font-accent">{project?.description}</p>
         </div>
     );
 };

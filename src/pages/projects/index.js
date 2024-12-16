@@ -12,7 +12,7 @@ const Portfolio = () => {
             title: "Traveldate",
             category: "Web Application",
             description: "Connect travelers looking to share journeys.",
-            images: ["/images/traveldate/1.jpg", "/images/traveldate/2.jfif"],
+            images: ["/images/traveldate/1.jpg", "/images/traveldate/2.jpg"],
         },
         {
             title: "Adopus Recruitment Portal",
@@ -73,7 +73,7 @@ const Portfolio = () => {
 
             <div className="container mx-auto px-4">
                 <div className="flex flex-wrap justify-center gap-4 mb-6">
-                    {categories.map((category, index) => (
+                    {categories?.map((category, index) => (
                         <button
                             key={index}
                             onClick={() => setActiveCategory(category)}
@@ -98,17 +98,17 @@ const Portfolio = () => {
                     >
                         <div className="relative w-full h-64">
                             <Image
-                                src={project.images[0]}
-                                alt={project.title}
+                                src={project?.images[0]?.src}
+                                alt={project?.title}
                                 className="object-cover rounded-lg"
                                 layout="fill"
                             />
                         </div>
                         <div className="mt-4">
-                            <h3 className="text-xl font-bold">{project.title}</h3>
-                            <p className="text-gray-400 mt-2 truncate">{project.description}</p>
+                            <h3 className="text-xl font-bold">{project?.title}</h3>
+                            <p className="text-gray-400 mt-2 truncate">{project?.description}</p>
                             <Link
-                                href={`/projects/${project.title
+                                href={`/projects/${project?.title
                                     .toLowerCase()
                                     .replace(/\s+/g, "-")}`}
                             >

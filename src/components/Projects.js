@@ -13,7 +13,7 @@ const Portfolio = () => {
         {
             title: "Traveldate",
             description: "Connect travelers looking to share journeys",
-            image: "./images/traveldate/1.jfif",
+            image: "./images/traveldate/1.jpg",
         },
         {
             title: "Vendor Management",
