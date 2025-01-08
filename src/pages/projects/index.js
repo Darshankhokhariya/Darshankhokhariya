@@ -5,42 +5,42 @@ import Image from "next/image";
 const Portfolio = () => {
     const [activeCategory, setActiveCategory] = useState("All");
 
-    const categories = ["All", "Web Application", "Landing Pages", "Applications"];
+    const categories = ["All", "Web", "Landing Pages", "Applications"];
 
     const projects = [
         {
             title: "Traveldate",
             category: "Web Application",
             description: "Connect travelers looking to share journeys.",
-            images: ["/images/traveldate/1.jpg", "/images/traveldate/2.jpg"],
+            images: ["/images/traveldate/traveldate.png", "/images/traveldate/1.jpg", "/images/traveldate/2.jpg"],
         },
         {
             title: "Adopus Recruitment Portal",
-            category: "Landing Pages",
+            category: "Web",
             description:
                 "Discover the latest job opportunities tailored for your skills and aspirations.",
-            images: ["/images/adopus/adopus2.jpg", "/images/adopus/adopus1.jpg"],
+            images: ["/images/adopus/adopus.png", "/images/adopus/adopus2.jpg", "/images/adopus/adopus1.jpg"],
         },
         {
             title: "Vendor Management",
-            category: "Web Application",
+            category: "Web",
             description:
                 "Comprehensive Vendor Management System with role-based access, user authentication, and features to manage vendors, blogs, and events seamlessly.",
-            images: ["/images/canconnect/1.png", "/images/canconnect/2.png"],
+            images: ["/images/canconnect/canconnect.png", "/images/canconnect/1.png", "/images/canconnect/2.png"],
         },
         {
             title: "Pharmaceutical Website",
-            category: "Landing Pages",
+            category: "Web",
             description:
                 "Designed and developed a user-friendly pharmaceutical website with responsive UI for seamless navigation and efficient product management.",
-            images: ["/images/stepmed/1.png", "/images/stepmed/2.png"],
+            images: ["/images/stepmed/stepmed.png", "/images/stepmed/1.png", "/images/stepmed/2.png"],
         },
         {
             title: "Vianee Jewels",
-            category: "Web Application",
+            category: "Web",
             description:
                 "Elegant jewelry management platform with responsive UI for showcasing collections.",
-            images: ["/images/vianee/vianee1.png", "/images/vianee/vianee2.png"],
+            images: ["/images/vianee/vianne.png", "/images/vianee/vianee1.png", "/images/vianee/vianee2.png"],
         },
         {
             title: "Application Overview",
@@ -94,32 +94,44 @@ const Portfolio = () => {
                 {filteredProjects.map((project, index) => (
                     <div
                         key={index}
-                        className="bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-105 transform transition-transform"
+                        className="group relative bg-gray-800 p-2 rounded-lg shadow-lg overflow-hidden"
                     >
-                        <div className="relative w-full h-64">
+                        {/* Image Section */}
+                        <div className="relative w-full h-80 overflow-hidden rounded-lg">
                             <Image
                                 src={project?.images[0]}
                                 alt={project?.title}
-                                className="object-cover rounded-lg"
+                                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
                                 layout="fill"
                             />
                         </div>
-                        <div className="mt-4">
-                            <h3 className="text-xl font-bold">{project.title}</h3>
-                            <p className="text-gray-400 mt-2 truncate">{project.description}</p>
+
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-40">
+                            <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                            <p className="text-gray-200 mt-2 px-3">{project.description}</p>
+                            {/* Button Section */}
                             <Link
                                 href={`/projects/${project.title
                                     .toLowerCase()
                                     .replace(/\s+/g, "-")}`}
                             >
-                                <button className="text-primary mt-4 inline-block">
+                                <button className="text-white bg-primary px-4 rounded py-1.5 mt-4 inline-block">
                                     View Details
                                 </button>
                             </Link>
                         </div>
+
+                        {/* Before-After Effect */}
+                        <div className="absolute inset-0">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                            <div className="absolute bottom-0 left-0 w-full h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-right"></div>
+                        </div>
                     </div>
                 ))}
             </div>
+
+
         </div>
     );
 };

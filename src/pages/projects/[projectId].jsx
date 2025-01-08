@@ -10,6 +10,7 @@ const projectData = {
         title: "Traveldate",
         description: "Connect travelers looking to share journeys.",
         images: [
+            "/images/traveldate/traveldate.png",
             "/images/traveldate/1.jpg",
             "/images/traveldate/2.jpg",
         ],
@@ -19,6 +20,7 @@ const projectData = {
         description:
             "Discover the latest job opportunities tailored for your skills and aspirations.",
         images: [
+            "/images/adopus/adopus.png",
             "/images/adopus/adopus2.jpg",
             "/images/adopus/adopus1.jpg",
         ],
@@ -28,6 +30,7 @@ const projectData = {
         description:
             "Comprehensive Vendor Management System with role-based access, user authentication, and features to manage vendors, blogs, and events seamlessly.",
         images: [
+            "/images/canconnect/canconnect.png",
             "/images/canconnect/1.png",
             "/images/canconnect/2.png",
         ],
@@ -37,6 +40,7 @@ const projectData = {
         description:
             "Designed and developed a user-friendly pharmaceutical website with responsive UI for seamless navigation and efficient product management.",
         images: [
+            "/images/stepmed/stepmed.png",
             "/images/stepmed/1.png",
             "/images/stepmed/2.png",
         ],
@@ -50,7 +54,7 @@ const projectData = {
             "/images/vianee/vianee2.png",
         ],
     },
-    "a  pplication-overview": {
+    "application-overview": {
         title: "Application Overview",
         description:
             "A beautifully crafted landing page that provides a comprehensive overview of the application. Designed with a responsive and visually appealing layout, it effectively highlights the application's features and functionality, offering an engaging user experience.",
@@ -58,7 +62,6 @@ const projectData = {
             "/images/landing.png"
         ]
     }
-
 };
 
 

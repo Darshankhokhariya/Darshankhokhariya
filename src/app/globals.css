@@ -20,3 +20,10 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
+.hover-overlay {
+  pointer-events: none; /* Blocks all interactions by default */
+}
+
+.hover-overlay button {
+  pointer-events: auto; /* Allows interactions with buttons */
+}
